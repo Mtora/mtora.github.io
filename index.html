@@ -1,42 +1,77 @@
 ---
-layout: page
-description: "Thinking will not overcome fear but action will."
+layout: base
 ---
 
+<!--valine comment function-->
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+
 {% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
+<div class="post">
+
+    <h2 class="post-title">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+            {% if post.title %}
             {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
+            {% else %}
+            {{ site.page_no_title }}
+            {% endif %}
+        </a>
+    </h2>
+
+    <div class="post-meta">
+        <span>
+        <i class="icon-post-date"> {{ post.date | date: "%Y年%m月%d日" }}
+
+        </i>
+            <!-- 显示每篇博客阅读量, id 将作为查询条件 -->
+                <span id={{post.url}} class="leancloud-visitors" data-flag-title={{post.title}}>
+                    <span class="post-meta-divider">|</span>
+                    <span class="post-meta-item-text">阅读量 </span>
+                    <span class="leancloud-visitors-count"></span>
+                </span>
+                &#x1F601
+            <script>
+                var notify = '{{site.valine.notify}}' === true;
+                var verify = '{{site.valine.verify}}.>' === true;
+                var visitor = '{{site.valine.visitor}}.>' === true;
+
+                new Valine({
+                    av: AV,
+                    el: '#valine_comment',
+                    notify: notify,
+                    verify: verify,
+                    // smiles_url: '/smiles',
+                    visitor: true,
+                    app_id: '{{site.valine.app_id}}',
+                    app_key: '{{site.valine.app_key}}',
+                    placeholder: '{{site.valine.placeholder}}',
+                    avatar: '{{site.valine.avatar}}',
+                });
+            </script>
+        </span>
+
+    </div>
+
+    <div class="post-content">{{ post.content | strip_html | truncate:160 }}</div>
+
+    <p class="readmore"><a href="{{ post.url | prepend: site.baseurl }}">阅读更多</a></p>
+
 </div>
-<hr>
 {% endfor %}
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
+<div class="page-navigator">
     {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
+    {% if paginator.page == 2 %}
+    <a href="/" class="previous">上一页</a>
+    {% else %}
+    <a href="/page/{{ paginator.previous_page }}/" class="previous">上一页</a>
     {% endif %}
+    {% endif %}
+    <span class="page-number">第 {{ paginator.page }}/{{ paginator.total_pages }} 页</span>
     {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
+    <a href="/page/{{ paginator.next_page }}/" class="next">下一页</a>
     {% endif %}
-</ul>
-{% endif %}
+</div>
