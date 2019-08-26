@@ -154,6 +154,13 @@ a:focus {
     padding: 5px;
 }
 
+#sidebar .widget hitokoto {
+    color: #6E7173;
+    list-style-type: disc;
+    margin-left: 15px;
+    padding: 0;
+}
+
 #sidebar .widget ul {
     color: #6E7173;
     list-style-type: disc;
