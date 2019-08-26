@@ -1,7 +1,7 @@
 # Site settings
 title: moelab
 subtitle: [萌研]
-keywords: moelab
+keywords: moelab,萌研
 description: 略略略
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://moelab.net/" # 你的域名

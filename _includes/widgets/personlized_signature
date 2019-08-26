@@ -1,6 +1,31 @@
 <div class="widget">
-    <div class="widget-title"><i class="icon-edit"> 一言</i></div><ul></ul>
-    <br><br>
+    <div class="widget-title"><i class="icon-edit"> 一言</i></div>
+    <ul>
+    <div id="hitokoto">:D 获取中...</div>
+    <div id="hito-from" style="float:right;">:D 获取中...</div>
+    <!-- 以下写法，选取一种即可 -->
+
+    <!-- 现代写法，推荐 -->
+    <!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+    <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+    <!--End-->
+    <script>
+      fetch('https://v1.hitokoto.cn/?c=b')
+        .then(function (res){
+          return res.json();
+        })
+        .then(function (data) {
+          var hitokoto = document.getElementById('hitokoto');
+          var from = document.getElementById('hito-from');
+          hitokoto.innerText = data.hitokoto;
+          from.innerText = '- '+data.from;
+        })
+        .catch(function (err) {
+          console.error(err);
+        })
+    </script>
+    </ul>
 <td style="text-align: center"><a style="color: slategrey"></a>
 
 
