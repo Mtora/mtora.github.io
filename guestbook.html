@@ -56,28 +56,14 @@ permalink: /guestbook/
 <!--    </a>-->
 <!--</h4>-->
 
-
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
 <p><br/><br/><br/><br/><br/><br/><br/><br/><hr /><br/>或者你也可以直接在这里留言哈哈：</p>
-<div id="valine_comment" class="fb_comments_container"></div>
+<div id="disqus_thread"></div>
 <script>
-    var notify = '{{site.valine.notify}}' === true;
-    var verify = '{{site.valine.verify}}.>' === true;
-    var visitor = '{{site.valine.visitor}}.>' === true;
-
-    new Valine({
-        av: AV,
-        el: '#valine_comment',
-        notify: notify,
-        verify: verify,
-        // smiles_url: '/smiles',
-        visitor: visitor,
-        app_id: '{{site.valine.app_id}}',
-        app_key: '{{site.valine.app_key}}',
-        placeholder: '{{site.valine.placeholder}}',
-        avatar: '{{site.valine.avatar}}'
-    });
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://moelab-net.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
