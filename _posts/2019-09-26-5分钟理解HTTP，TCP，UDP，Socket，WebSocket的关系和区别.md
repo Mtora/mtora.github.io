@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "5分钟理解HTTP，TCP，UDP，Socket，WebSocket的关系"
-date:   2019-08-21 19:45:01 +0800--
+date:   2019-09-26 19:45:01 +0800--
 categories: [网络知识,TCP,术语解释]
 tags: [网络知识,TCP,术语解释]  
 ---
