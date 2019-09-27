@@ -2,8 +2,8 @@
 layout: post
 title:  "5分钟理解HTTP，TCP，UDP，Socket，WebSocket的关系"
 date:   2019-08-21 19:45:01 +0800--
-categories: [网络,TCP]
-tags: [网络,TCP]  
+categories: [网络知识,TCP,术语解释]
+tags: [网络知识,TCP,术语解释]  
 ---
 
 ### 一、这一大堆关键词之间到底有啥区别？
