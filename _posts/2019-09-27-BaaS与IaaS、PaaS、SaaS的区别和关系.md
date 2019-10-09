@@ -2,8 +2,8 @@
 layout: post
 title:  "BaaS与IaaS、PaaS、SaaS的区别和关系"
 date:   2019-09-27 11:09:01 +0800--
-categories: [术语解释,BaaS]
-tags: [术语解释,BaaS]  
+categories: [名词解释,BaaS]
+tags: [名词解释,BaaS]  
 ---
 
 ### _如何理解BaaS？_
