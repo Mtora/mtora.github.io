@@ -11,7 +11,6 @@ tags: [jekyll]
 
 
 <br>
-<p  align="right">regards.</p>
 <h4 align="right">
     <a href="https://moelab.net/">
         moelab.

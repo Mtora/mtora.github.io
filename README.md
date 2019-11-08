@@ -2,7 +2,7 @@
 =================================
 
 一个简洁的、多设备支持的 Jekyll 博客模板，用于搭建[我的独立博客](http://moelab.net/)。  
-[我的独立博客](http://www.oukohou.wang/) 主题基于 [oukohou/oukohou.github.io](https://github.com/oukohou/oukohou.github.io.git) 
+主题基于 [oukohou/oukohou.github.io](https://github.com/oukohou/oukohou.github.io.git) 
 很大程度上参考了 [oukohou](https://github.com/oukohou) 的博客主题 [oukohou](https://github.com/oukohou)，感谢。  
 模板预览：
 ![template preview](https://camo.githubusercontent.com/74fd2ccea00a682742515ce1d3725283c3385721/687474703a2f2f6f6f6f2e306f302e6f6f6f2f323031352f31302f32342f353632623562653132313737652e6a7067)  
