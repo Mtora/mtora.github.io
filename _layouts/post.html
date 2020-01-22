@@ -60,7 +60,7 @@ layout: base
     <script>
         var image = new Image();
         image.onload = function(){
-            //$("#reply_title").html("你翻墙了");
+            $("#reply_title").html("欢迎留言：");
             $("#disqus_thread").attr("style","display:block");
         };
         image.onerror = function(){
@@ -75,7 +75,7 @@ layout: base
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
     <script src="/assets/js/Valine.min.js"></script>
 
-    <em><p id="reply_title">欢迎留言：</p></em>
+    <em><p id="reply_title">正在检测Disqus服务是否可用...</p></em>
     <!-- disqus -->
     <div id="disqus_thread" style="display: none;"></div>
     <script>
