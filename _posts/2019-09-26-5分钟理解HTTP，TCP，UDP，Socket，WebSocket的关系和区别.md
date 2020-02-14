@@ -58,7 +58,7 @@ tags: [网络知识,TCP,名词解释]
  >WebSocket 是基于 HTTP 1.1 的一个功能，它本身是依赖 HTTP 的（使用 101 状态码来切换协议）。
   在OSI模型中，TCP是第四层传输层的协议，HTTP是第七层应用层的协议。
   
-  ![avatar](https://raw.githubusercontent.com/mtora/image_bed/master/2019-09/ws-tcp-http.png)
+  ![avatar](https://cdn.jsdelivr.net/gh/mtora/image_bed@1.0/2019-09/ws-tcp-http.png)
  <center style="margin-top:-25px;">具体关系图</center>
 <br>
 <p  align="right">regards.</p>

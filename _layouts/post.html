@@ -64,7 +64,7 @@ layout: base
             $("#disqus_thread").attr("style","display:block");
         };
         image.onerror = function(){
-            $("#reply_title").html("🇨🇳🇨🇳🇨🇳检测到您无法使用Disqus（需科学上网），自动切换到精简模式：");
+            $("#reply_title").html("🇨🇳🇨🇳🇨🇳检测到您无法使用Disqus（需科学上网），已切换到精简模式：");
             $("#valine_comment").attr("style","display:block");
         };
         image.src = "http://youtube.com/favicon.ico?v="+Date.parse(new Date());
