@@ -83,7 +83,27 @@ permalink: /about/
 
 <p><br/><br/><br/><br/><br/><br>
 <hr/><br/>不写个评论嘛：</p>
-<div id="disqus_thread"></div>
+<script>
+    var image = new Image();
+    image.onload = function(){
+        $("#reply_title").html("欢迎留言：");
+        $("#disqus_thread").attr("style","display:block");
+    };
+    image.onerror = function(){
+        $("#reply_title").html("🇨🇳🇨🇳🇨🇳检测到您无法使用Disqus（需科学上网），已切换到精简模式：");
+        $("#valine_comment").attr("style","display:block");
+    };
+    image.src = "http://youtube.com/favicon.ico?v="+Date.parse(new Date());
+</script>
+
+<!--valine comment function-->
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/js/Valine.min.js"></script>
+
+<em><p id="reply_title">正在检测Disqus服务是否可用...</p></em>
+<!-- disqus -->
+<div id="disqus_thread" style="display: none;"></div>
 <script>
     (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
@@ -94,6 +114,25 @@ permalink: /about/
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
+<!-- 改用disqus，valine纯用来计算访问量 -->
+<div id="valine_comment" class="fb_comments_container" style="display: none;"></div>
+<script>
+    var notify = '{{site.valine.notify}}' === true;
+    var verify = '{{site.valine.verify}}.>' === true;
+    var visitor = '{{site.valine.visitor}}.>' === true;
+    new Valine({
+        av: AV,
+        el: '#valine_comment',
+        notify: notify,
+        verify: verify,
+        // smiles_url: '/smiles',
+        visitor: true,
+        app_id: '{{site.valine.app_id}}',
+        app_key: '{{site.valine.app_key}}',
+        placeholder: '{{site.valine.placeholder}}',
+        avatar: '{{site.valine.avatar}}',
+    });
+</script>
 
 
 <!--<div id="disqus_thread"></div>-->
