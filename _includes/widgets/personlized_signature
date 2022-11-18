@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
     <!--End-->
     <script>
-      fetch('https://v1.hitokoto.cn/?c=b')
+      fetch('https://international.v1.hitokoto.cn/?c=b')
         .then(function (res){
           return res.json();
         })
